@@ -6,6 +6,13 @@ const app = express();
 
 app.use(express.json());
 
+app.patch("/clientes/:id", (req, res) => {
+    const id = parseInt(req.params.id);
+    const customer = req.body;
+    db.updateCustomerCustomer(id, customer);
+    res.sendStatus(200);
+});
+
 app.post("/clientes", (req, res) => {
     const customer = req.body;
     db.insertCustomer(customer);
