@@ -21,5 +21,10 @@ function selectCustomer(id){
     return customers.find(c => c.id === id);
 }
 
-  module.exports = { selectCustomers, selectCustomer };
+function insertCustomer(customer){
+    customers.push(customer);
+    return customer;
+}
+
+  module.exports = { selectCustomers, selectCustomer, insertCustomer };
   

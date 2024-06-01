@@ -4,6 +4,14 @@ const db = require("./db");
 const express = require("express");
 const app = express();
 
+app.use(express.json());
+
+app.post("/clientes", (req, res) => {
+    const customer = req.body;
+    db.insertCustomer(customer);
+    res.sendStatus(201);
+});
+
 app.get("/clientes/:id", (req, res) => {
     const id = parseInt(req.params.id);
     res.json(db.selectCustomer(id));
