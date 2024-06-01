@@ -5,11 +5,21 @@ const customers = [
       idade: 35,
       uf: "MG",
     },
+    {
+        id: 2,
+        nome: "João",
+        idade: 40,
+        uf: "SP",
+      },
   ];
   
   function selectCustomers() {
     return customers;
   }
   
-  module.exports = { selectCustomers };
+function selectCustomer(id){
+    return customers.find(c => c.id === id);
+}
+
+  module.exports = { selectCustomers, selectCustomer };
   
